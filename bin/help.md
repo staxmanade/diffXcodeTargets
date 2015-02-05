@@ -10,6 +10,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  **[--debug]**            : Logs extra diagnostic debug info
 
-# Examples
+# Example(s)
 
 `diffXCodeTargets ./myProject.xcodeproj/project.pbxproj targetA targetB`
