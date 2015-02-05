@@ -1,15 +1,15 @@
 
-# diffXCodeTargets
+# diffXcodeTargets
 
-Command line tool that can be used to diff two XCode targets
+Command line tool that can be used to diff two Xcode targets
 
 # How to Install
 
-`npm install -g diffXCodeTargets`
+`npm install -g diffxcodetargets`
 
 # Usage
 
-&nbsp;&nbsp;`diffXCodeTargets projectFilePath targetA targetB`
+&nbsp;&nbsp;`diffXcodeTargets projectFilePath targetA targetB`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  **[--version]**          : Prints just the version
 
@@ -19,4 +19,4 @@ Command line tool that can be used to diff two XCode targets
 
 # Example(s)
 
-`diffXCodeTargets ./myProject.xcodeproj/project.pbxproj targetA targetB`
+`diffXcodeTargets ./myProject.xcodeproj/project.pbxproj targetA targetB`

@@ -12,8 +12,8 @@ var cleanArgs = process.argv.map(function (item) {
 });
 var debug = argv.verbose = cleanArgs.indexOf('--debug') >= 0 || cleanArgs.indexOf('--verbose') >= 0;
 
-const DiffXCodeTargets = new Liftoff({
-  name: 'diffXCodeTargets',
+const DiffXcodeTargets = new Liftoff({
+  name: 'diffXcodeTargets',
   v8flags: ['--harmony'] // to support all flags: require('v8flags');
   // ^ respawn node with any flag listed here
 }).on('require', function (name, module) {
@@ -51,7 +51,7 @@ var printHelpMessage = function() {
   console.log(output);
 };
 
-DiffXCodeTargets.launch({
+DiffXcodeTargets.launch({
   cwd: argv.cwd,
   //configPath: null, //argv.hackerfile,
   //require: argv.require,
@@ -191,7 +191,7 @@ function invoke (env) {
     var targetAData = buildDataFor(targetA, targetANativeTarget);
     var targetBData = buildDataFor(targetB, targetBNativeTarget);
 
-    temp.mkdir("diffXCodeTargets", function (err, dirPath) {
+    temp.mkdir("diffXcodeTargets", function (err, dirPath) {
       var fileName = targetA + "-" + targetB;
       var approvedName = path.join(dirPath, fileName + ".approved.txt");
       fs.writeFileSync(approvedName, JSON.stringify(targetAData, null, '  '));

@@ -1,14 +1,14 @@
 
-# diffXCodeTargets (v###)
+# diffXcodeTargets (v###)
 
 # Usage
 
-  diffXCodeTargets projectFilePath targetA targetB
+  diffXcodeTargets projectFilePath targetA targetB
         [--version]          : Prints just the version
         [--help]             : Prints this help info
         [--debug]            : Logs extra diagnostic debug info
 
-# Examples
+# Example(s)
 
-diffXCodeTargets ./myProject.xcodeproj/project.pbxproj targetA targetB
+diffXcodeTargets ./myProject.xcodeproj/project.pbxproj targetA targetB
 

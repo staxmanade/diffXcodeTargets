@@ -1,8 +1,8 @@
-# diffXCodeTargets (v{{version}})
+# diffXcodeTargets (v{{version}})
 
 # Usage
 
-&nbsp;&nbsp;`diffXCodeTargets projectFilePath targetA targetB`
+&nbsp;&nbsp;`diffXcodeTargets projectFilePath targetA targetB`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  **[--version]**          : Prints just the version
 
@@ -12,4 +12,4 @@
 
 # Example(s)
 
-`diffXCodeTargets ./myProject.xcodeproj/project.pbxproj targetA targetB`
+`diffXcodeTargets ./myProject.xcodeproj/project.pbxproj targetA targetB`

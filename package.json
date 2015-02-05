@@ -1,7 +1,7 @@
 {
   "name": "diffxcodetargets",
   "version": "0.0.2",
-  "description": "Command line tool that can be used to diff two XCode targets",
+  "description": "Command line tool that can be used to diff two Xcode targets",
   "preferglobal": true,
   "scripts": {
     "test": "mocha tests/*.js"
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/staxmanade/diffXCodeTargets"
+    "url": "https://github.com/staxmanade/diffXcodeTargets"
   },
   "bugs": {
-    "url": "https://github.com/staxmanade/diffXCodeTargets/issues"
+    "url": "https://github.com/staxmanade/diffXcodeTargets/issues"
   },
   "author": "",
   "license": "MIT",
