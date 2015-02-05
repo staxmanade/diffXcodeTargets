@@ -7,7 +7,7 @@
     "test": "mocha tests/*.js"
   },
   "bin": {
-    "skypeit": "./bin/index.js"
+    "diffXcodeTargets": "./bin/index.js"
   },
   "repository": {
     "type": "git",
