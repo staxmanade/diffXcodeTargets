@@ -1,5 +1,5 @@
 {
-  "name": "diffXCodeTargets",
+  "name": "diffxcodetargets",
   "version": "0.0.1",
   "description": "Command line tool that can be used to diff two XCode targets",
   "preferglobal": true,
