@@ -14,6 +14,24 @@
 		967378601A840E3C007C4250 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9673785F1A840E3C007C4250 /* Images.xcassets */; };
 		967378631A840E3C007C4250 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967378611A840E3C007C4250 /* LaunchScreen.xib */; };
 		9673786F1A840E3C007C4250 /* SampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9673786E1A840E3C007C4250 /* SampleTests.m */; };
+		9673787B1A840E96007C4250 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 967378571A840E3C007C4250 /* AppDelegate.m */; };
+		9673787C1A840E96007C4250 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 967378541A840E3C007C4250 /* main.m */; };
+		9673787F1A840E96007C4250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9673785C1A840E3C007C4250 /* Main.storyboard */; };
+		967378801A840E96007C4250 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967378611A840E3C007C4250 /* LaunchScreen.xib */; };
+		967378811A840E96007C4250 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9673785F1A840E3C007C4250 /* Images.xcassets */; };
+		967378911A840F53007C4250 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967378871A840F53007C4250 /* Accelerate.framework */; };
+		967378921A840F53007C4250 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967378881A840F53007C4250 /* Accounts.framework */; };
+		967378931A840F53007C4250 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967378891A840F53007C4250 /* AddressBook.framework */; };
+		967378941A840F53007C4250 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9673788A1A840F53007C4250 /* AddressBookUI.framework */; };
+		967378951A840F53007C4250 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9673788B1A840F53007C4250 /* AdSupport.framework */; };
+		967378961A840F53007C4250 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9673788C1A840F53007C4250 /* AssetsLibrary.framework */; };
+		967378971A840F53007C4250 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9673788D1A840F53007C4250 /* AudioToolbox.framework */; };
+		967378981A840F53007C4250 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9673788E1A840F53007C4250 /* AudioUnit.framework */; };
+		967378991A840F53007C4250 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9673788F1A840F53007C4250 /* AVFoundation.framework */; };
+		9673789A1A840F53007C4250 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967378901A840F53007C4250 /* AVKit.framework */; };
+		9673789B1A840F59007C4250 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967378871A840F53007C4250 /* Accelerate.framework */; };
+		9673789C1A840F59007C4250 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967378881A840F53007C4250 /* Accounts.framework */; };
+		967378A71A841106007C4250 /* SampleMissingStuff-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 967378A61A841106007C4250 /* SampleMissingStuff-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +58,18 @@
 		967378681A840E3C007C4250 /* SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9673786D1A840E3C007C4250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9673786E1A840E3C007C4250 /* SampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleTests.m; sourceTree = "<group>"; };
+		967378851A840E96007C4250 /* Sample copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sample copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		967378871A840F53007C4250 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		967378881A840F53007C4250 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		967378891A840F53007C4250 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		9673788A1A840F53007C4250 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		9673788B1A840F53007C4250 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9673788C1A840F53007C4250 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9673788D1A840F53007C4250 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9673788E1A840F53007C4250 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		9673788F1A840F53007C4250 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		967378901A840F53007C4250 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		967378A61A841106007C4250 /* SampleMissingStuff-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SampleMissingStuff-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9673789B1A840F59007C4250 /* Accelerate.framework in Frameworks */,
+				9673789C1A840F59007C4250 /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +89,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9673787D1A840E96007C4250 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				967378911A840F53007C4250 /* Accelerate.framework in Frameworks */,
+				967378921A840F53007C4250 /* Accounts.framework in Frameworks */,
+				967378931A840F53007C4250 /* AddressBook.framework in Frameworks */,
+				967378941A840F53007C4250 /* AddressBookUI.framework in Frameworks */,
+				967378951A840F53007C4250 /* AdSupport.framework in Frameworks */,
+				967378961A840F53007C4250 /* AssetsLibrary.framework in Frameworks */,
+				967378971A840F53007C4250 /* AudioToolbox.framework in Frameworks */,
+				967378981A840F53007C4250 /* AudioUnit.framework in Frameworks */,
+				967378991A840F53007C4250 /* AVFoundation.framework in Frameworks */,
+				9673789A1A840F53007C4250 /* AVKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		967378461A840E3C007C4250 = {
 			isa = PBXGroup;
 			children = (
+				967378A51A841038007C4250 /* Frameworks */,
 				967378511A840E3C007C4250 /* Sample */,
 				9673786B1A840E3C007C4250 /* SampleTests */,
 				967378501A840E3C007C4250 /* Products */,
@@ -74,6 +124,7 @@
 			children = (
 				9673784F1A840E3C007C4250 /* Sample.app */,
 				967378681A840E3C007C4250 /* SampleTests.xctest */,
+				967378851A840E96007C4250 /* Sample copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +147,7 @@
 		967378521A840E3C007C4250 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				967378A61A841106007C4250 /* SampleMissingStuff-Info.plist */,
 				967378531A840E3C007C4250 /* Info.plist */,
 				967378541A840E3C007C4250 /* main.m */,
 			);
@@ -117,6 +169,23 @@
 				9673786D1A840E3C007C4250 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		967378A51A841038007C4250 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				967378871A840F53007C4250 /* Accelerate.framework */,
+				967378881A840F53007C4250 /* Accounts.framework */,
+				967378891A840F53007C4250 /* AddressBook.framework */,
+				9673788A1A840F53007C4250 /* AddressBookUI.framework */,
+				9673788B1A840F53007C4250 /* AdSupport.framework */,
+				9673788C1A840F53007C4250 /* AssetsLibrary.framework */,
+				9673788D1A840F53007C4250 /* AudioToolbox.framework */,
+				9673788E1A840F53007C4250 /* AudioUnit.framework */,
+				9673788F1A840F53007C4250 /* AVFoundation.framework */,
+				967378901A840F53007C4250 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +226,23 @@
 			productReference = 967378681A840E3C007C4250 /* SampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		967378781A840E96007C4250 /* SampleMissingStuff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 967378821A840E96007C4250 /* Build configuration list for PBXNativeTarget "SampleMissingStuff" */;
+			buildPhases = (
+				967378791A840E96007C4250 /* Sources */,
+				9673787D1A840E96007C4250 /* Frameworks */,
+				9673787E1A840E96007C4250 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleMissingStuff;
+			productName = Sample;
+			productReference = 967378851A840E96007C4250 /* Sample copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,6 +275,7 @@
 			projectRoot = "";
 			targets = (
 				9673784E1A840E3C007C4250 /* Sample */,
+				967378781A840E96007C4250 /* SampleMissingStuff */,
 				967378671A840E3C007C4250 /* SampleTests */,
 			);
 		};
@@ -199,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967378A71A841106007C4250 /* SampleMissingStuff-Info.plist in Resources */,
 				9673785E1A840E3C007C4250 /* Main.storyboard in Resources */,
 				967378631A840E3C007C4250 /* LaunchScreen.xib in Resources */,
 				967378601A840E3C007C4250 /* Images.xcassets in Resources */,
@@ -209,6 +297,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9673787E1A840E96007C4250 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9673787F1A840E96007C4250 /* Main.storyboard in Resources */,
+				967378801A840E96007C4250 /* LaunchScreen.xib in Resources */,
+				967378811A840E96007C4250 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +328,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9673786F1A840E3C007C4250 /* SampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		967378791A840E96007C4250 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9673787B1A840E96007C4250 /* AppDelegate.m in Sources */,
+				9673787C1A840E96007C4250 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +502,26 @@
 			};
 			name = Release;
 		};
+		967378831A840E96007C4250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sample copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "Sample copy";
+			};
+			name = Debug;
+		};
+		967378841A840E96007C4250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sample copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "Sample copy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -422,6 +549,15 @@
 				967378771A840E3C007C4250 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+		};
+		967378821A840E96007C4250 /* Build configuration list for PBXNativeTarget "SampleMissingStuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				967378831A840E96007C4250 /* Debug */,
+				967378841A840E96007C4250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,10 @@ Command line tool that can be used to diff two Xcode targets
 
 `npm install -g diffxcodetargets`
 
+# Sample of a diff
+
+![sample image of a diff of two targets](assets/SampleOfDiff.png)
+
 # Usage
 
 &nbsp;&nbsp;`diffXcodeTargets projectFilePath targetA targetB`
