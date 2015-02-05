@@ -1,0 +1,35 @@
+{
+  "name": "diffXCodeTargets",
+  "version": "0.0.0",
+  "description": "Command line tool that can be used to diff two XCode targets",
+  "preferglobal": true,
+  "scripts": {
+    "test": "mocha tests/*.js"
+  },
+  "bin": {
+    "skypeit": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/staxmanade/diffXCodeTargets"
+  },
+  "bugs": {
+    "url": "https://github.com/staxmanade/diffXCodeTargets/issues"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "liftoff": "^1.0.3",
+    "lodash": "^2.4.1",
+    "minimist": "^1.1.0",
+    "msee": "^0.1.1",
+    "temp": "^0.8.1",
+    "xcode": "^0.6.7"
+  },
+  "devDependencies": {
+    "approvals": "0.0.24",
+    "chai": "^1.10.0",
+    "shelljs": "^0.3.0"
+  }
+}
