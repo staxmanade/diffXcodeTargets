@@ -4,7 +4,7 @@
   "description": "Command line tool that can be used to diff two Xcode targets",
   "preferglobal": true,
   "scripts": {
-    "test": "mocha tests/*.js"
+    "test": "mocha tests/*.tests.js"
   },
   "bin": {
     "diffXcodeTargets": "./bin/index.js"
