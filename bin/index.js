@@ -120,111 +120,107 @@ function invoke (env) {
 
   var project = xcode.project(projectFile);
 
-  project.parse(function (err) {
-    if(err) {
-      throw err;
+  project.parseSync();
+
+  var objects = project.hash.project.objects;
+  var sources = objects.PBXSourcesBuildPhase;
+
+  var targetANativeTarget;
+  var targetBNativeTarget;
+  var availableTargets = [];
+
+  Object.keys(objects.PBXNativeTarget).forEach(function (key) {
+    var item = objects.PBXNativeTarget[key];
+    if(item.name) {
+      if(item.name.toLowerCase() === targetA.toLowerCase()){
+        targetANativeTarget = item;
+      }
+
+      if(item.name.toLowerCase() === targetB.toLowerCase()){
+        targetBNativeTarget = item;
+      }
+
+      availableTargets.push(item.name);
     }
+  });
 
+  if(!targetANativeTarget) {
+    console.log(chalk.red("Could not find TargetA '" + targetA + "'. Possible targets are: " + availableTargets.join(', ')));
+    process.exit(1);
+  }
+
+  if(!targetBNativeTarget) {
+    console.log(chalk.red("Could not find TargetB '" + targetB + "'. Possible targets are: " + availableTargets.join(', ')));
+    process.exit(1);
+  }
+
+  function buildDataFor(targetName, nativeTarget) {
+
+    // Sorce files
+    var sourcesId = nativeTarget.buildPhases.filter(function (item) {
+      return item.comment === "Sources";
+    })[0].value;
+
+    var sources = objects.PBXSourcesBuildPhase[sourcesId];
+
+    sourceFiles = sources.files.map(function (item) {
+      return item.comment.replace(" in Sources", "");
+    }).sort();
+
+    // Framework files
+    var frameworksId = nativeTarget.buildPhases.filter(function (item) {
+      return item.comment === "Frameworks";
+    })[0].value;
+
+    var frameworks = objects.PBXFrameworksBuildPhase[frameworksId];
+
+    frameworkFiles = frameworks.files.map(function (item) {
+      return item.comment.replace(" in Frameworks", "");
+    }).sort();
+
+    return {
+      name: targetName,
+      configurations: getBuildConfigurations(project, targetName),
+      sources: sourceFiles,
+      frameworks: frameworkFiles
+    };
+  }
+
+  function getBuildSettings(project, buildConfigId) {
     var objects = project.hash.project.objects;
-    var sources = objects.PBXSourcesBuildPhase;
+    return objects.XCBuildConfiguration[buildConfigId].buildSettings;
+  }
 
-    var targetANativeTarget;
-    var targetBNativeTarget;
-    var availableTargets = [];
-
+  function getBuildConfigurations(project, target) {
+    var objects = project.hash.project.objects;
+    var targetSettings;
     Object.keys(objects.PBXNativeTarget).forEach(function (key) {
       var item = objects.PBXNativeTarget[key];
-      if(item.name) {
-        if(item.name.toLowerCase() === targetA.toLowerCase()){
-          targetANativeTarget = item;
-        }
-
-        if(item.name.toLowerCase() === targetB.toLowerCase()){
-          targetBNativeTarget = item;
-        }
-
-        availableTargets.push(item.name);
+      if(item.name === target) {
+        targetSettings = item;
       }
     });
 
-    if(!targetANativeTarget) {
-      console.log(chalk.red("Could not find TargetA '" + targetA + "'. Possible targets are: " + availableTargets.join(', ')));
-      process.exit(1);
-    }
+    var result = {};
 
-    if(!targetBNativeTarget) {
-      console.log(chalk.red("Could not find TargetB '" + targetB + "'. Possible targets are: " + availableTargets.join(', ')));
-      process.exit(1);
-    }
-
-    function buildDataFor(targetName, nativeTarget) {
-
-      // Sorce files
-      var sourcesId = nativeTarget.buildPhases.filter(function (item) {
-        return item.comment === "Sources";
-      })[0].value;
-
-      var sources = objects.PBXSourcesBuildPhase[sourcesId];
-
-      sourceFiles = sources.files.map(function (item) {
-        return item.comment.replace(" in Sources", "");
-      }).sort();
-
-      // Framework files
-      var frameworksId = nativeTarget.buildPhases.filter(function (item) {
-        return item.comment === "Frameworks";
-      })[0].value;
-
-      var frameworks = objects.PBXFrameworksBuildPhase[frameworksId];
-
-      frameworkFiles = frameworks.files.map(function (item) {
-        return item.comment.replace(" in Frameworks", "");
-      }).sort();
-
-      return {
-        name: targetName,
-        configurations: getBuildConfigurations(project, targetName),
-        sources: sourceFiles,
-        frameworks: frameworkFiles
-      };
-    }
-
-    function getBuildSettings(project, buildConfigId) {
-      var objects = project.hash.project.objects;
-      return objects.XCBuildConfiguration[buildConfigId].buildSettings;
-    }
-
-    function getBuildConfigurations(project, target) {
-      var objects = project.hash.project.objects;
-      var targetSettings;
-      Object.keys(objects.PBXNativeTarget).forEach(function (key) {
-        var item = objects.PBXNativeTarget[key];
-        if(item.name === target) {
-          targetSettings = item;
-        }
+    if(targetSettings) {
+      // like Debug/Release
+      var configurationList = objects.XCConfigurationList[targetSettings.buildConfigurationList];
+      configurationList.buildConfigurations.forEach(function (item) {
+        result[item.comment] = getBuildSettings(project, item.value);
       });
-
-      var result = {};
-
-      if(targetSettings) {
-        // like Debug/Release
-        var configurationList = objects.XCConfigurationList[targetSettings.buildConfigurationList];
-        configurationList.buildConfigurations.forEach(function (item) {
-          result[item.comment] = getBuildSettings(project, item.value);
-        });
-      }
-      return result
     }
+    return result
+  }
 
-    var targetAData = buildDataFor(targetA, targetANativeTarget);
-    var targetBData = buildDataFor(targetB, targetBNativeTarget);
+  var targetAData = buildDataFor(targetA, targetANativeTarget);
+  var targetBData = buildDataFor(targetB, targetBNativeTarget);
 
-    temp.mkdir("diffXcodeTargets", function (err, dirPath) {
-      var fileName = targetA + "-" + targetB;
-      var approvedName = path.join(dirPath, fileName + ".approved.txt");
-      fs.writeFileSync(approvedName, JSON.stringify(targetAData, null, '  '));
-      require('approvals').verifyAsJSON(dirPath, fileName, targetBData);
-    });
-
+  temp.mkdir("diffXcodeTargets", function (err, dirPath) {
+    var fileName = targetA + "-" + targetB;
+    var approvedName = path.join(dirPath, fileName + ".approved.txt");
+    fs.writeFileSync(approvedName, JSON.stringify(targetAData, null, '  '));
+    require('approvals').verifyAsJSON(dirPath, fileName, targetBData);
   });
+
 }
