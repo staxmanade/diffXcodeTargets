@@ -183,9 +183,37 @@ function invoke (env) {
 
       return {
         name: targetName,
+        configurations: getBuildConfigurations(project, targetName),
         sources: sourceFiles,
         frameworks: frameworkFiles
       };
+    }
+
+    function getBuildSettings(project, buildConfigId) {
+      var objects = project.hash.project.objects;
+      return objects.XCBuildConfiguration[buildConfigId].buildSettings;
+    }
+
+    function getBuildConfigurations(project, target) {
+      var objects = project.hash.project.objects;
+      var targetSettings;
+      Object.keys(objects.PBXNativeTarget).forEach(function (key) {
+        var item = objects.PBXNativeTarget[key];
+        if(item.name === target) {
+          targetSettings = item;
+        }
+      });
+
+      var result = {};
+
+      if(targetSettings) {
+        // like Debug/Release
+        var configurationList = objects.XCConfigurationList[targetSettings.buildConfigurationList];
+        configurationList.buildConfigurations.forEach(function (item) {
+          result[item.comment] = getBuildSettings(project, item.value);
+        });
+      }
+      return result
     }
 
     var targetAData = buildDataFor(targetA, targetANativeTarget);
