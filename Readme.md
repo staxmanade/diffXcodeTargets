@@ -1,15 +1,17 @@
 
 # diffXcodeTargets
 
-Command line tool that can be used to diff two Xcode targets
+Command line tool that can be used to diff two Xcode targets.
 
-# How to Install
-
-`npm install -g diffxcodetargets`
+:warning: :warning: :warning: this is a bit of an early spike :construction: :construction: :construction:
 
 # Sample of a diff
 
 ![sample image of a diff of two targets](assets/SampleOfDiff.png)
+
+# How to Install
+
+`npm install -g diffxcodetargets`
 
 # Usage
 
