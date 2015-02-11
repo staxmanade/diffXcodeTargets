@@ -108,16 +108,6 @@ function invoke (env) {
     process.exit(1);
   }
 
-  if(!targetA) {
-    console.log(chalk.red("TargetA not specified: '" + targetA + "'"));
-    process.exit(1);
-  }
-
-  if(!targetA) {
-    console.log(chalk.red("TargetB not specified: '" + targetB + "'"));
-    process.exit(1);
-  }
-
   var project = xcode.project(projectFile);
 
   console.log("For larger projects, this could take a moment...");
@@ -146,12 +136,12 @@ function invoke (env) {
   });
 
   if(!targetANativeTarget) {
-    console.log(chalk.red("Could not find TargetA '" + targetA + "'. Possible targets are: " + availableTargets.join(', ')));
+    console.log(chalk.red("Could not find TargetA '" + targetA + "'. Possible targets are: \n  - " + availableTargets.join('\n  - ')));
     process.exit(1);
   }
 
   if(!targetBNativeTarget) {
-    console.log(chalk.red("Could not find TargetB '" + targetB + "'. Possible targets are: " + availableTargets.join(', ')));
+    console.log(chalk.red("Could not find TargetB '" + targetB + "'. Possible targets are: \n  - " + availableTargets.join('\n  - ')));
     process.exit(1);
   }
 
