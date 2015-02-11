@@ -1,7 +1,7 @@
 
 # diffXcodeTargets
 
-Command line tool that can be used to diff two Xcode targets.
+Command line tool that can be used to diff two Xcode targets source files, frameworks and build settings.
 
 :warning: :warning: :warning: this is a bit of an early spike :construction: :construction: :construction:
 
