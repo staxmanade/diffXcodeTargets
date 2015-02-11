@@ -120,6 +120,7 @@ function invoke (env) {
 
   var project = xcode.project(projectFile);
 
+  console.log("For larger projects, this could take a moment...");
   project.parseSync();
 
   var objects = project.hash.project.objects;
