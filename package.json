@@ -25,18 +25,18 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "approvals": "0.0.25",
-    "chalk": "^0.5.1",
+    "approvals": "^3.0.2",
+    "chalk": "^2.4.1",
     "liftoff": "^2.0",
     "lodash": "^4.17.5",
     "minimist": "^1.1.0",
-    "msee": "^0.1.1",
+    "msee": "^0.3.5",
     "temp": "^0.8.1",
-    "xcode": "^0.6.7"
+    "xcode": "^1.0.0"
   },
   "devDependencies": {
     "approvals": "0.0.24",
-    "chai": "^1.10.0",
-    "shelljs": "^0.3.0"
+    "chai": "^4.1.2",
+    "shelljs": "^0.8.2"
   }
 }
